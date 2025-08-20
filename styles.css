@@ -1,0 +1,191 @@
+:root {
+    --primary-color: #922b21; /* Vermelho queimado/Vinho */
+    --secondary-color: #e6d3c2; /* Bege areia */
+    --card-color: #f7f1e3; /* Bege claro para a carta */
+    --text-color: #4b3832; /* Marrom escuro */
+    --border-color: #a87d65; /* Marrom para a borda */
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: var(--secondary-color);
+    overflow: hidden;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    transition: opacity 1s ease-in-out;
+}
+
+.initial-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.click-text {
+    font-size: 1.2em;
+    color: var(--text-color);
+    animation: pulseText 1.5s infinite;
+}
+
+@keyframes pulseText {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.envelope-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+    cursor: pointer;
+}
+
+.envelope-icon {
+    font-size: 5em;
+    color: var(--primary-color);
+    transition: transform 0.5s ease;
+}
+
+.hearts-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.hearts-wrapper .fas {
+    position: absolute;
+    color: var(--primary-color);
+    font-size: 1.5em;
+    opacity: 0;
+}
+
+@keyframes flyHeart1 {
+    0% { transform: translate(0, 0); opacity: 0; }
+    20% { opacity: 1; }
+    100% { transform: translate(-80px, -100px) rotate(-20deg); opacity: 0; }
+}
+@keyframes flyHeart2 {
+    0% { transform: translate(0, 0); opacity: 0; }
+    20% { opacity: 1; }
+    100% { transform: translate(0, -120px); opacity: 0; }
+}
+@keyframes flyHeart3 {
+    0% { transform: translate(0, 0); opacity: 0; }
+    20% { opacity: 1; }
+    100% { transform: translate(80px, -100px) rotate(20deg); opacity: 0; }
+}
+
+.heart-1 { animation: flyHeart1 3s ease-in-out infinite; animation-delay: 0.5s; }
+.heart-2 { animation: flyHeart2 3s ease-in-out infinite; animation-delay: 1.5s; }
+.heart-3 { animation: flyHeart3 3s ease-in-out infinite; animation-delay: 2.5s; }
+
+.envelope-icon.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+    to { opacity: 0; transform: scale(0); }
+}
+
+.letter-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-color);
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease;
+}
+
+.letter-modal.is-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Nova estilização da carta */
+.letter-content {
+    background-color: var(--card-color);
+    padding: 40px;
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    transform: translateY(100vh);
+    transition: transform 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    border: 3px double var(--border-color); /* Borda decorada */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito de papel amassado ou textura */
+.letter-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="f1"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" result="noise"/><feBlend in="SourceGraphic" in2="noise" mode="multiply"/></filter><rect width="100" height="100" fill="transparent" filter="url(#f1)"/></svg>');
+    background-size: cover;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+
+.letter-modal.is-active .letter-content {
+    transform: translateY(0);
+}
+
+.letter-title, .letter-body, .signature {
+    font-family: 'Nanum Pen Script', cursive;
+    text-align: left;
+    color: var(--text-color);
+}
+
+.letter-title {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin: 0 0 20px 0;
+    text-align: center;
+}
+
+.letter-body {
+    font-size: 1.5em;
+    line-height: 1.6;
+}
+
+.signature {
+    font-size: 2em;
+    text-align: right;
+    margin-top: 20px;
+    color: var(--primary-color);
+}

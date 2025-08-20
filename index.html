@@ -3,28 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>100 dias</title>
+    <title>100 Dias com o José ❤️</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1 class="title">100 Dias com o amor da minha vida</h1>
-        <p class="subtitle">Um amor que só aumenta a cada dia que passa.</p>
+
+    <div class="main-container" id="main-container">
         
-       <div class="card-container">
-            <i class="fas fa-envelope open-card-icon"></i>
-            <div class="card-modal" id="cardModal">
-                <div class="card-content">
-                    <button class="close-card-btn">&times;</button>
-                    <h2>Meu amor, José,</h2>
-                    <p>O tempo voa quando estamos juntos, e hoje, ao comemorarmos 100 dias, sinto que cada momento ao seu lado foi um presente. Nossa história é linda, cheia de risadas, de abraços e de um carinho que me completa. Obrigado por ser essa pessoa incrível, que me inspira e me faz tão feliz. Que venham muitos e muitos mais dias de amor. Te amo!</p>
-                    <p class="signature">Com todo o meu amor,<br>[Seu nome]</p>
+        <div class="initial-screen" id="initial-screen">
+            <h1 class="welcome-text">Uma mensagem para você, José</h1>
+            
+            <div class="envelope-container" id="envelope-container">
+                <i class="fas fa-envelope envelope-icon"></i>
+                <div class="hearts-wrapper">
+                    <i class="fas fa-heart heart-1"></i>
+                    <i class="fas fa-heart heart-2"></i>
+                    <i class="fas fa-heart heart-3"></i>
                 </div>
             </div>
+            
+            <p class="click-text">Clique no envelope</p>
         </div>
+
+        <div class="letter-modal" id="letter-modal">
+            <div class="letter-content" id="letter-content">
+                <h2 class="letter-title">Meu amor, José,</h2>
+                <p class="letter-body">O tempo voa quando estamos juntos, e hoje, ao comemorarmos 100 dias, sinto que cada momento ao seu lado foi um presente. Nossa história é linda, cheia de risadas, de abraços e de um carinho que me completa. Obrigado por ser essa pessoa incrível, que me inspira e me faz tão feliz. Que venham muitos e muitos mais dias de amor. Te amo!</p>
+                <p class="signature">Com todo o meu amor,<br>[Seu nome]</p>
+            </div>
+        </div>
+
     </div>
     
     <script src="script.js"></script>
