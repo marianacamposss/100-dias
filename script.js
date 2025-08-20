@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const openCardBtn = document.querySelector('.open-card-btn');
+    const openCardBtn = document.querySelector('.open-card-icon'); // Agora seleciona o ícone
     const closeCardBtn = document.querySelector('.close-card-btn');
     const cardModal = document.getElementById('cardModal');
 

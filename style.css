@@ -28,21 +28,17 @@ body {
     color: #666;
 }
 
-.open-card-btn {
-    background-color: #e55c5c;
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 50px;
-    font-size: 1em;
+/* Novo estilo para o ícone de envelope */
+.open-card-icon {
+    font-size: 4em;
+    color: #e55c5c;
     cursor: pointer;
     margin-top: 30px;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: color 0.3s ease;
 }
 
-.open-card-btn:hover {
-    background-color: #cc4747;
+.open-card-icon:hover {
+    color: #cc4747;
 }
 
 .card-modal {
