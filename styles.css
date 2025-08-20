@@ -189,3 +189,36 @@ body, html {
     margin-top: 20px;
     color: var(--primary-color);
 }
+/* Responsividade para telas menores (celulares) */
+@media (max-width: 600px) {
+    .main-container {
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .welcome-text {
+        font-size: 2em;
+    }
+
+    .click-text {
+        font-size: 1em;
+    }
+
+    .letter-content {
+        width: 90%;
+        max-width: none;
+        padding: 20px;
+    }
+
+    .letter-title {
+        font-size: 2em;
+    }
+
+    .letter-body {
+        font-size: 1.2em;
+    }
+
+    .signature {
+        font-size: 1.5em;
+    }
+}
